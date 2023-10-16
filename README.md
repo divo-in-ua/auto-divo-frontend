@@ -22,6 +22,13 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## Build Docker image
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Run `docker build -t "divoinua/auto-frontend:$(date +'%Y%m%d%H%M%S')" .`
+
+## Start Docker container
+
+Run `docker run -p 4200:80 divoinua/auto-frontend:YOURTIMESTAMP`
+
+## Upload Docker Image to Docker Hub
+Run `docker login -u divoinua -p YOUR_ACCESS_TOKEN && docker push divoinua/auto-frontend:YOURTIMESTAMP`
